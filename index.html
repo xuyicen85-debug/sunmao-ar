@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f4ead8">
+  <title>小小榫卯匠</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="screen start-screen active" id="start-screen" aria-labelledby="main-title">
+      <div class="start-sky">
+        <div class="sun"></div>
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+      </div>
+      <div class="garden-scene" aria-hidden="true">
+        <div class="roof roof-back"></div>
+        <div class="pavilion">
+          <div class="roof"></div>
+          <div class="beam"></div>
+          <div class="pillar left"></div>
+          <div class="pillar right"></div>
+          <div class="railing"></div>
+        </div>
+        <div class="garden-wall"><span></span></div>
+        <div class="bamboo bamboo-one"></div>
+        <div class="bamboo bamboo-two"></div>
+      </div>
+      <div class="start-content">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="joint-piece horizontal"></span>
+          <span class="joint-piece vertical"></span>
+        </div>
+        <p class="eyebrow">榫卯 AR 科普预习课</p>
+        <h1 id="main-title">小小榫卯匠</h1>
+        <p class="start-subtitle">不用钉子和胶水<br>木头也能牢牢连接</p>
+        <button class="primary-btn start-btn" id="start-btn" type="button">
+          <span>开始学习</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+        <p class="start-note">完成 5 个木作小挑战，集齐匠人印章</p>
+      </div>
+      <div class="wood-floor" aria-hidden="true"></div>
+    </section>
+
+    <section class="screen lesson-screen" id="lesson-screen" aria-live="polite">
+      <header class="lesson-header">
+        <button class="icon-btn" id="home-btn" type="button" aria-label="返回首页" title="返回首页">⌂</button>
+        <div class="progress-area">
+          <div class="progress-copy">
+            <span id="level-label">第一关</span>
+            <strong id="progress-count">1 / 5</strong>
+          </div>
+          <div class="progress-track" aria-label="课程进度">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+        <div class="stamp-mini" id="stamp-mini" aria-label="本关完成状态">匠</div>
+      </header>
+
+      <div class="lesson-scroll">
+        <div class="lesson-heading">
+          <span class="lesson-number" id="lesson-number">01</span>
+          <div>
+            <p class="lesson-kicker">木作小课堂</p>
+            <h2 id="lesson-title">认识榫和卯</h2>
+          </div>
+        </div>
+
+        <section class="video-card" aria-label="教学视频">
+          <div class="video-placeholder" id="video-placeholder">
+            <div class="video-pattern" aria-hidden="true"></div>
+            <button class="play-btn" id="play-btn" type="button" aria-label="播放教学视频">
+              <span></span>
+            </button>
+            <div class="video-copy">
+              <span>教学视频</span>
+              <strong id="video-title">第一课：什么是榫卯？</strong>
+            </div>
+          </div>
+          <div class="video-playing" id="video-playing" hidden>
+            <video id="lesson-video" controls playsinline preload="metadata"></video>
+            <div class="playing-joint" id="video-fallback">
+              <div class="demo-mortise"></div>
+              <div class="demo-tenon"></div>
+            </div>
+            <p id="video-status">视频加载中...</p>
+            <button type="button" id="close-video">关闭演示</button>
+          </div>
+        </section>
+
+        <section class="knowledge-card">
+          <div class="section-label"><span>木</span> 木匠小知识</div>
+          <p id="knowledge-text"></p>
+        </section>
+
+        <section class="challenge-card">
+          <div class="challenge-title">
+            <div class="challenge-icon" aria-hidden="true">?</div>
+            <div>
+              <span>动手试一试</span>
+              <h3 id="question-text"></h3>
+            </div>
+          </div>
+          <div id="interaction-area"></div>
+          <div class="feedback" id="feedback" role="status" hidden>
+            <span class="feedback-icon" id="feedback-icon"></span>
+            <p id="feedback-text"></p>
+          </div>
+        </section>
+
+        <button class="primary-btn next-btn" id="next-btn" type="button" disabled>
+          <span>完成挑战后继续</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen finish-screen" id="finish-screen">
+      <div class="confetti" aria-hidden="true"></div>
+      <div class="final-stamp">
+        <span>小小</span>
+        <strong>榫卯匠</strong>
+        <small>学习完成</small>
+      </div>
+      <p class="eyebrow">五关全部通过</p>
+      <h2>太棒啦，小匠人！</h2>
+      <p>你已经认识了榫和卯，也学会了为小椅子找到稳定的连接方法。</p>
+      <div class="reward-row" aria-label="获得五枚印章">
+        <span>木</span><span>合</span><span>识</span><span>序</span><span>匠</span>
+      </div>
+      <button class="primary-btn" id="restart-btn" type="button">再学一次</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
